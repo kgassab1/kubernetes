@@ -11,7 +11,7 @@ agent any
 
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/kgassab1/kubernetes'
+        git 'https://github.com/kgassab1/kubernetes.git'
       }
     }
     stage('Building image') {
