@@ -14,7 +14,7 @@ git 'https://github.com/kgassab1/kubernetes.git'
 stage('Building our image') {
 steps{
 script {
-sh "docker build -t kgassab/kubernetes --pull=true"
+sh "docker build . -t kgassab/kubernetes "
 
 }
 }
