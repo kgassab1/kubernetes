@@ -23,7 +23,7 @@ stage('Deploy our image') {
 steps{
 script {
 docker.withRegistry( '', registryCredential ) {
-sh "docker push kgassab/kubernetes"
+dockerImage.push()
 }
 }
 }
