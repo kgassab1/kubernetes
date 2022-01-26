@@ -20,9 +20,9 @@ agent any
     stage('Building image') {
       steps{
         script {
-            docker.withRegistry( '', registryCredential ) {
-            dockerImage = docker.build 
-           }
+
+            dockerImage = docker.build registry
+
         }
       }
     }
