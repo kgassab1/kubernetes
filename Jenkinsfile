@@ -16,7 +16,7 @@ pipeline {
       steps{
         script {
             docker.withRegistry( '', registryCredential ) {
-            dockerImage = docker.build
+            dockerImage = docker.build('kgassab/kubernetes')
            }
         }
       }
