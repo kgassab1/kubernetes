@@ -21,7 +21,7 @@ agent any
       steps{
         script {
             docker.withRegistry( '', registryCredential ) {
-            dockerImage = docker.build
+            dockerImage = docker.build registry + ":$BUILD_NUMBER"
            }
         }
       }
@@ -31,9 +31,9 @@ agent any
     stage('Publish Image') {
       steps{
         script {
-          
+          docker.withRegistry( '', registryCredential ) {
             dockerImage.push()
-
+               }
            }
         }
     }
