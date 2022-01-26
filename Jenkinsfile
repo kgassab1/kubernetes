@@ -14,7 +14,8 @@ git 'https://github.com/kgassab1/kubernetes.git'
 stage('Building our image') {
 steps{
 script {
-dockerImage = docker.build registry + ":$BUILD_NUMBER"
+sh "docker build -t kgassab/kubernetes --pull=true"
+
 }
 }
 }
@@ -22,7 +23,7 @@ stage('Deploy our image') {
 steps{
 script {
 docker.withRegistry( '', registryCredential ) {
-dockerImage.push()
+sh "docker push kgassab/kubernetes"
 }
 }
 }
