@@ -1,6 +1,5 @@
 pipeline {
 agent any
-
   environment {
     registry = "kgassab/kubernetes"
     registryCredential = 'DockerHub'
@@ -9,8 +8,6 @@ agent any
 
 
   stages {
-
-
 
     stage('Cloning Git') {
       steps {
@@ -21,7 +18,7 @@ agent any
       steps{
         script {
 
-            dockerImage = docker.build registry
+            dockerImage = docker.build("kgassab/kubernetes") registry
 
         }
       }
