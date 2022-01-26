@@ -4,6 +4,14 @@ pipeline {
     registryCredential = 'DockerHub'
     dockerImage = ''
 
+            stageCompile = ':x:'
+            stageDependencies = ':x:'
+            stageTest = ':x:'
+            stageClient = ':x:'
+            stageArchive = ':x:'
+
+
+
   }
   agent any
   stages {
