@@ -31,9 +31,9 @@ agent any
     stage('Publish Image') {
       steps{
         script {
-          docker.withRegistry( '', registryCredential ) {
+          
             dockerImage.push()
-               }
+
            }
         }
     }
