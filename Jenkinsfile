@@ -1,3 +1,9 @@
+def call(body) {
+def config = [:]
+body.resolveStrategy = Closure.DELEGATE_FIRST
+body.delegate = config
+body()
+
 pipeline {
   environment {
     registry = "kgassab/kubernetes"
@@ -16,7 +22,7 @@ pipeline {
       steps{
         script {
             docker.withRegistry( '', registryCredential ) {
-            dockerImage = docker.build 
+            dockerImage = docker.build
            }
         }
       }
@@ -31,4 +37,7 @@ pipeline {
       }
     }
   }
+}
+
+
 }
