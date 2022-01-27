@@ -18,7 +18,7 @@ agent any
       steps{
         script {
 
-            dockerImage = docker.build  registry
+            dockerImage = docker.build
 
         }
       }
