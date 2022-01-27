@@ -11,11 +11,6 @@ agent any
 
 
 
-      stage('Package') {
-      steps {
-          sh 'mvn clean package -DskipTests'
-          }
-      }
 
 
     stage('Cloning Git') {
