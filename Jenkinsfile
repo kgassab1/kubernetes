@@ -10,9 +10,11 @@ agent any
   stages {
 
 
-        
+
       stage('Package') {
+      steps {
           sh 'mvn clean package -DskipTests'
+          }
       }
 
 
