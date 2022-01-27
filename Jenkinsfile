@@ -9,6 +9,16 @@ agent any
 
   stages {
 
+
+  checkout scm
+      //env.PATH = "${tool 'Maven3'}/bin:${env.PATH}"
+      stage('Package') {
+          dir('RpcServerSample') {
+              sh 'mvn clean package -DskipTests'
+          }
+      }
+
+
     stage('Cloning Git') {
       steps {
         git 'https://github.com/kgassab1/kubernetes.git'
